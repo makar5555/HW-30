@@ -1,14 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Анімація руху квадрата 100×100 — робочий</title>
+<style>
+  .stage {
+    width: 320px;
+    height: 320px;
+    background-color: #000;
+    position: relative;
+    margin: 40px auto;
+    overflow: hidden;
+  }
+
+  .square {
+    width: 100px;
+    height: 100px;
+    animation: squareMove 6s linear infinite;
+    will-change: left, top;
+    position: absolute;
+  }
+
+  @keyframes squareMove {
+    0%   { left: 0px;   top: 0px;   background-color: red;}
+    25%  { left: 220px; top: 0px;   background-color: blue;}
+    50%  { left: 220px; top: 220px; background-color: yellow;}
+    75%  { left: 0px;   top: 220px; background-color: green;} 
+    100% { left: 0px;   top: 0px;   background-color: purple}
+  }
+
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="box"></div>
-    </div>
+  <div class="stage" aria-label="Сцена руху квадрата">
+    <div class="square" title="Квадрат 100×100"></div>
+  </div>
+
+  <p style="text-align:center;">GG</p>
 </body>
 </html>
